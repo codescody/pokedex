@@ -7,7 +7,9 @@ app.use(express.urlencoded({extended : false}));
 app.use(methodOverride("_method"));
 
 app.get('/pokemon', (req, res) => {
-    res.send('gotta catch em all')
+    res.render('index.ejs', {
+        pokemons: pokemon,
+    })
 })
 
 app.listen(3000)
