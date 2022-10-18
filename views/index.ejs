@@ -31,6 +31,8 @@
         <button><a href="/pokemon/new">Add a new Pokemon</a></button>
         <% for(let i=0; i < pokemons.length; i++) { %>
             <a href='/pokemon/<%= i %>'><img src=<%= pokemons[i].img%>></a>
+            <a href="/pokemon/<%=i%>/edit">Edit</a>
+            // delete
         <% } %>
         
     </body>

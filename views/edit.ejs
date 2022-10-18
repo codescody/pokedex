@@ -3,24 +3,24 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Add a Pokemon to the Pokedex</title>
+        <title>Edit a Pokemon</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>Add a new Pokemon</h1>
-        <form action="/pokemon" method="POST">
-            Name: <input type="text" name="name" placeholder="Pokemon" />
-            Type: <input type="text" name="type" placeholder="Pokemon Type" />
-            Image: <input type="text" name="img" placeholder="Image" />
-            HP: <input type="text" name="hp" placeholder="HP"/>
-            Attack: <input type="text" name="attack" placeholder="Attack"/>
-            Defense: <input type="text" name="defense" placeholder="Defense"/>
-            Special Attack: <input type="text" name="spattack" placeholder="Special Attack"/>
-            Special Defense: <input type="text" name="spdefense" placeholder="Special Defense"/>
-            Speed: <input type="text" name="speed" placeholder="Speed"/>
-            <input type="submit" value="Create Pokemon"/>
+        <h1>Edit a Pokemon</h1>
+        <form action="/pokemon/<%=id%>?_method=PUT" method="POST">
+            Name: <input type="text" name="name" value="<%= pokemons.name %>" placeholder="Pokemon" />
+            Type: <input type="text" name="type" value="<%= pokemons.type %>" placeholder="Pokemon Type" />
+            Image: <input type="text" name="img" value="<%= pokemons.img %>" placeholder="Image" />
+            HP: <input type="text" name="hp" value="<%= pokemons.hp %>" placeholder="HP"/>
+            Attack: <input type="text" name="attack" value="<%= pokemons.attack %>" placeholder="Attack"/>
+            Defense: <input type="text" name="defense" value="<%= pokemons.defense %>" placeholder="Defense"/>
+            Special Attack: <input type="text" name="spattack" value="<%= pokemons.spattack %>" placeholder="Special Attack"/>
+            Special Defense: <input type="text" name="spdefense" value="<%= pokemons.spdefense %>" placeholder="Special Defense"/>
+            Speed: <input type="text" name="speed" value="<%= pokemons.speed %>" placeholder="Speed"/>
+            <input type="submit" value="Submit Changes"/>
         </form>
         <nav>
             <a href="/pokemon">Back to Pokedex</a>

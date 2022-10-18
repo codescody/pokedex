@@ -17,14 +17,26 @@ app.get('/pokemon/new', (req, res) => {
     })
 })
 
-app.get('/pokemon/:id', (req, res) => {
-    res.render('show.ejs', {
+app.get('/pokemon/:id/edit', (req, res) => {
+    res.render('edit.ejs', 
+    {
         pokemons: pokemon[req.params.id],
+        id: req.params.id,
     })
+    
+})
+
+app.put('/pokemon/:id', (req, res) => {
+    pokemon[req.params.id] = req.body
+    res.redirect('/pokemon')
+    console.log(req.body)
 })
 
 app.post('/pokemon', (req, res) => {
-    let stats = {
+    let newPokemon = {
+        name: req.body.name,
+        img: req.body.img,
+        type: req.body.type,
         hp: req.body.hp,
         attack: req.body.attack,
         defense: req.body.defense,
@@ -32,14 +44,14 @@ app.post('/pokemon', (req, res) => {
         spdefense: req.body.spdefense,
         speed: req.body.speed,
     }
-    let newPokemon = {
-        name: req.body.name,
-        img: req.body.img,
-        type: req.body.type,
-        stats: stats
-    }
     pokemon.push(newPokemon)
     res.redirect('/pokemon')
+})
+
+app.get('/pokemon/:id', (req, res) => {
+    res.render('show.ejs', {
+        pokemons: pokemon[req.params.id],
+    })
 })
 
 app.listen(3000)

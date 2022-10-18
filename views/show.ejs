@@ -17,30 +17,30 @@
         <a href="/pokemon">Back</a>
         <h1><%= pokemons.name %></h1>
         <img src=<%= pokemons.img %>>
-        <ul id="type">
+        <ul>
             <li>Type:
                 <%= pokemons.type %>
             </li>
-        <ul id="stats">
-            <li>
-                Hitpoints: <%= pokemons.stats.hp %>
-            </li>
-            <li>
-                Attack: <%= pokemons.stats.attack %>
-            </li>
-            <li>
-                Defense <%= pokemons.stats.defense %>
-            </li>
-            <li>
-                Special Attack: <%= pokemons.stats.spattack %>
-            </li>
-            <li>
-                Special Defense: <%= pokemons.stats.spdefense %>
-            </li>
-            <li>
-                Speed: <%= pokemons.stats.speed %>
-            </li>
         </ul>
+        <ul>
+            <li>
+                Hitpoints: <%= pokemons.hp %>
+            </li>
+            <li>
+                Attack: <%= pokemons.attack %>
+            </li>
+            <li>
+                Defense <%= pokemons.defense %>
+            </li>
+            <li>
+                Special Attack: <%= pokemons.spattack %>
+            </li>
+            <li>
+                Special Defense: <%= pokemons.spdefense %>
+            </li>
+            <li>
+                Speed: <%= pokemons.speed %>
+            </li>
         </ul>
     </body>
 </html>
