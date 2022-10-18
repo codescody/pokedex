@@ -65,6 +65,11 @@ app.post('/pokemon', (req, res) => {
     res.redirect('/pokemon')
 })
 
+app.delete('/pokemon/:id', (req, res) => {
+    pokemon.splice(req.params.id,1)
+    res.redirect('/pokemon')
+})
+
 app.get('/pokemon/:id', (req, res) => {
     res.render('show.ejs', {
         pokemons: pokemon[req.params.id],
