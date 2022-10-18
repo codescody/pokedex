@@ -12,6 +12,12 @@ app.get('/pokemon', (req, res) => {
     })
 })
 
+app.put('/pokemon/:id', (req, res) => {
+    pokemon[req.params.id] = req.body
+    res.redirect('/pokemon')
+    console.log(req.body)
+})
+
 app.get('/pokemon/new', (req, res) => {
     res.render('new.ejs', {
     })
@@ -24,12 +30,6 @@ app.get('/pokemon/:id/edit', (req, res) => {
         id: req.params.id,
     })
     
-})
-
-app.put('/pokemon/:id', (req, res) => {
-    pokemon[req.params.id] = req.body
-    res.redirect('/pokemon')
-    console.log(req.body)
 })
 
 app.post('/pokemon', (req, res) => {
